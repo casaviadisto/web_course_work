@@ -1,0 +1,199 @@
+/* src/pages/Home.css */
+
+.home-container {
+    background-color: #0b0d17;
+    color: #d0d6f9;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Glassmorphism утиліта (якщо вона не глобальна) */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --- HEADER --- */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.header h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.header p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #8b9bb4;
+}
+
+/* Бейдж поточної місії */
+.current-mission-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 1px solid #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    margin-top: 10px;
+}
+
+.mission-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+.mission-value {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.mission-dates {
+    font-size: 0.9rem;
+    color: #8b9bb4;
+    font-family: monospace;
+}
+
+/* --- ЗАГАЛЬНІ СЕКЦІЇ --- */
+.section-block {
+    margin-bottom: 4rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #f59e0b;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #f59e0b;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+/* --- ЕКІПАЖ (Active Crew) --- */
+.active-crew-grid {
+    display: grid;
+    /* Використовуємо адаптивну сітку, таку ж як на інших сторінках */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* --- ГРАФІКИ --- */
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.chart-wrapper {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #d0d6f9;
+    font-size: 1.2rem;
+}
+
+/* --- ТТХ --- */
+.specs-section {
+    padding: 2rem;
+    border-left: 4px solid #38bdf8;
+}
+
+.specs-title {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+.specs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.specs-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.specs-label {
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+/* --- 3D MODEL --- */
+.model-container {
+    overflow: hidden;
+    padding: 10px; /* Трохи відступу всередині рамки */
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .active-crew-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- СЕКЦІЯ "ПРО СТАНЦІЮ" (TEXT) --- */
+.about-section {
+    padding: 2rem;
+    border-left: 4px solid #f59e0b; /* Помаранчевий акцент */
+}
+
+.about-text p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+    font-size: 1rem;
+    text-align: justify; /* Вирівнювання по ширині для краси */
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text strong {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Адаптив для тексту */
+@media (max-width: 768px) {
+    .about-text p {
+        text-align: left; /* На мобільному justify може виглядати погано */
+        font-size: 0.95rem;
+    }
+}

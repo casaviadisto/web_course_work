@@ -1,0 +1,162 @@
+/* LiveControl.css */
+
+/* 1. Основний контейнер */
+.live-control-wrapper {
+    background-color: #0b0d17; /* Глибокий космос */
+    /*min-height: 100vh;*/
+    padding: 2rem 1rem;
+    color: #d0d6f9; /* Світло-блакитний текст */
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+.live-control-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Відступи між секціями */
+}
+
+/* 2. Стиль секцій (Glassmorphism) */
+.live-section {
+    background: rgba(255, 255, 255, 0.05); /* Напівпрозорий фон */
+    backdrop-filter: blur(10px);           /* Ефект розмиття фону */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Тонка рамка */
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.live-section:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* 3. Типографіка та текст */
+.live-title {
+    color: #38bdf8; /* Неоновий блакитний */
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.info-text p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+    text-align: justify;
+}
+
+.info-text p strong {
+    color: #ffffff;
+}
+
+/* 4. Блок попередження (Alert) */
+.info-alert {
+    background: rgba(245, 158, 11, 0.15); /* Помаранчевий прозорий */
+    border-left: 4px solid #f59e0b;        /* Яскрава лінія зліва */
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 1.5rem;
+    color: #fff;
+}
+
+.info-alert p {
+    margin: 0;
+    text-align: left;
+}
+
+/* 5. Відео Хедер та Кнопки */
+.video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.3); /* Лінія під заголовком і кнопками */
+    padding-bottom: 15px;
+}
+
+/* Щоб лінія під заголовком не дублювалася (бо в JSX там inline style),
+   ми покладаємось на border у .video-header */
+
+.camera-toggles {
+    display: flex;
+    gap: 10px;
+}
+
+.cam-btn {
+    background: transparent;
+    border: 1px solid #38bdf8;
+    color: #38bdf8;
+    padding: 8px 20px;
+    border-radius: 20px; /* Округлі кнопки */
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cam-btn:hover {
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.cam-btn.active {
+    background: #38bdf8;
+    color: #0b0d17; /* Темний текст на світлому фоні */
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4); /* Неонове світіння */
+}
+
+/* 6. Відео та Iframe */
+.video-box {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Співвідношення сторін 16:9 */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 7. Адаптація контейнерів мапи та трекера */
+.tracker-box, .map-box {
+    /*width: 100%;*/
+    overflow: hidden;
+    border-radius: 8px;
+    /* Якщо всередині є білі компоненти, можна додати інверсію або фон,
+       але зазвичай карта виглядає добре як є */
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 768px) {
+    .video-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .camera-toggles {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .cam-btn {
+        flex: 1;
+        text-align: center;
+    }
+}

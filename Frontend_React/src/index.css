@@ -1,0 +1,47 @@
+/* src/index.css */
+
+:root {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: dark; /* Підказує браузеру, що тема темна (допомагає з скролбарами) */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* КЛЮЧОВЕ: Задаємо фон для HTML і BODY */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0b0d17; /* Твій темний колір */
+    color: #d0d6f9;
+    overflow-x: hidden; /* Запобігає горизонтальному скролу */
+}
+
+/* Скидання для всіх елементів */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Стилізація скролбару (опціонально, але красиво для космосу) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b0d17;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #38bdf8;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0ea5e9;
+}

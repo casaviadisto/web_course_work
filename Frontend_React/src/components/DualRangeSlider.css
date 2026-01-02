@@ -1,0 +1,59 @@
+/* DualRangeSlider.css */
+
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    /*gap: 10px;*/
+    /*padding: 10px 0;*/
+    width: 100%;
+}
+
+/* --- Текстові поля (Header) --- */
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #d0d6f9;
+    font-size: 0.9rem;
+}
+
+.input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-wrap span {
+    color: #8b9bb4;
+    font-size: 0.8rem;
+}
+
+.input-wrap input {
+    width: 50px;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+.input-wrap input:focus {
+    border-color: #38bdf8;
+}
+
+.input-wrap input::-webkit-outer-spin-button,
+.input-wrap input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Контейнер для самого слайдера MUI */
+.slider-container-mui {
+    width: 100%;
+    padding: 0 10px; /* Невеликий відступ з боків, щоб кружечки не обрізались */
+    box-sizing: border-box;
+}
